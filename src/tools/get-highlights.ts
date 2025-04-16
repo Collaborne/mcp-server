@@ -27,8 +27,10 @@ export class GetHighlightsTool implements IMCPTool {
           .describe("time filter in the user question"),
         typeFilters: z
           .array(z.nativeEnum(TypeFilter))
+          .optional()
           .describe("type filters in the user question"),
       })
+      .optional()
       .describe("Used to search for specific highlights"),
   } as const;
 
@@ -39,18 +41,19 @@ export class GetHighlightsTool implements IMCPTool {
   }
 
   async execute(args: {
-    searchFilters: {
+    searchFilters?: {
       dateFilter: DateFilter;
       typeFilters: TypeFilter[];
     };
   }) {
     try {
       const filterParts = [
-        toDateSearch(args.searchFilters.dateFilter),
-        toTypeSearch(args.searchFilters.typeFilters),
+        toDateSearch(args.searchFilters?.dateFilter ?? DateFilter.forever),
+        toTypeSearch(args.searchFilters?.typeFilters ?? []),
       ];
 
       const searchTerm = filterParts.filter(isExisting).join(" ");
+      process.stderr.write(searchTerm);
       const highlights = await this.apiClient.getHighlights<MinimalHighlight>({
         search_term: searchTerm,
       });

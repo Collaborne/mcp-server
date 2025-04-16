@@ -36,10 +36,10 @@ export interface IMCPTool<
     content: {
       type: "text";
       text: string;
-      [key: string]: unknown;
+      [key: string]: any;
     }[];
     isError?: boolean;
-    [key: string]: unknown;
+    [key: string]: any;
   }>;
 }
 

@@ -17,7 +17,7 @@ export class ApiClient {
     this.apiKey = apiKey;
   }
 
-  async getHighlights<T = unknown>(
+  async getHighlights<T = any>(
     params: {
       from?: number;
       limit?: number;
@@ -31,7 +31,7 @@ export class ApiClient {
     return this.fetchApi<T>("search-highlights", params);
   }
 
-  async getClusters<T = unknown>(
+  async getClusters<T = any>(
     params: {
       from?: number;
       limit?: number;
@@ -67,10 +67,10 @@ export class ApiClient {
           `API error (${response.status}): ${response.statusText}`
         );
       }
-
-      return (await response.json()) as T[];
+      const parsedResponse = await response.json();
+      return (parsedResponse?.items ?? []) as T[];
     } catch (error) {
-      console.error("Fetch error:", error);
+      process.stderr.write(`Fetch error:${error}`);
       throw error;
     }
   }

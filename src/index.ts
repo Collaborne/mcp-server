@@ -71,7 +71,7 @@ async function main() {
     await server.connect(transport);
     process.stderr.write("NEXT MCP Server running");
   } catch (error) {
-    console.error("Failed to start NEXT server:", error);
+    process.stderr.write(`Failed to start NEXT server: ${error}`);
     process.exit(1);
   }
 }

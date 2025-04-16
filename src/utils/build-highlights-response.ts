@@ -40,9 +40,7 @@ export function buildHighlightsResponse(
   highlights: MinimalHighlight[],
   includeQuotes = false
 ) {
-  process.stderr.write(
-    `Creating prompts based on ${highlights.length} highlights`
-  );
+  process.stderr.write(`Found ${highlights?.length ?? 0} highlights`);
 
   const hasHighlights = highlights.length > 0;
 

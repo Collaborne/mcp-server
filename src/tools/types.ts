@@ -2,12 +2,12 @@
 export interface ToolContentItem {
   type: "text";
   text: string;
-  [key: string]: unknown;
+  [key: string]: any;
 }
 
 // Define the response type that matches CallToolResultSchema
 export interface ToolResponse {
   content: ToolContentItem[];
   isError?: boolean;
-  [key: string]: unknown;
+  [key: string]: any;
 }

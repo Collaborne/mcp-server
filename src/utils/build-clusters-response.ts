@@ -35,9 +35,7 @@ function getTextsFromMultiplePlaylists(playlists: MinimalPlaylist[]) {
 }
 
 export function buildPlaylistsForPrompt(playlists: MinimalPlaylist[]) {
-  process.stderr.write(
-    `Creating prompts based on ${playlists.length} playlists`
-  );
+  process.stderr.write(`Found ${playlists?.length ?? 0} playlists`);
 
   const hasPlaylists = playlists.length > 0;
 
