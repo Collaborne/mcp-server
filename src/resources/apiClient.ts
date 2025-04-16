@@ -50,10 +50,7 @@ export class ApiClient {
   ): Promise<T[]> {
     const queryString = new URLSearchParams(params).toString();
     const url = `${this.baseUrl}/${endpoint}?${queryString}`;
-    process.stderr.write('url');
-    process.stderr.write(url);
-    process.stderr.write('apiKey:')
-    process.stderr.write(this.apiKey);
+
     const options: RequestInit = {
       method: "GET",
       headers: {
