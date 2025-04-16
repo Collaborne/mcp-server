@@ -1,5 +1,5 @@
 {
-  "name": "mcp-server",
+  "name": "@collaborne/mcp-server",
   "version": "1.0.1",
   "author": "Idriss Mahjoubi",
   "main": "dist/index.js",

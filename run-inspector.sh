@@ -5,8 +5,8 @@
 
 # Check if .env file exists
 if [ ! -f .env ]; then
-  echo "ERROR: .env file not found. Please create one based on .env.example."
-  echo "Make sure to fill in your AWS credentials."
+  echo "ERROR: .env file not found. Please create one based on .env.sample."
+  echo "Make sure to fill in your NEXT API_KEY."
   exit 1
 fi
 

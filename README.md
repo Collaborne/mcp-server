@@ -157,7 +157,7 @@ tool is limited to one team-space
 
 **Example input:**
 
-```json
+```
 What are the user frustrations and issues mentioned in the last week 
 ```
 
@@ -174,7 +174,7 @@ What are the user frustrations and issues mentioned in the last week
 }
 ```
 
-### get-clusters @TODO
+### get-clusters 
 
 Lists available NEXT clusters that the server has permission to access. This
 tool is limited to one team-space
@@ -185,7 +185,7 @@ tool is limited to one team-space
 
 **Example input:**
 
-```json
+```
 Summarize the main topics 
 ```
 
