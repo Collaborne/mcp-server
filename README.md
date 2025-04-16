@@ -30,7 +30,7 @@ The server is built using TypeScript and the MCP SDK, providing a secure and sta
 npm install -g @collaborne/mcp-server
 
 # Or as a dependency in your project
-npm install collaborne/mcp-server
+npm install @collaborne/mcp-server
 ```
 
 2. If building from source:
