@@ -106,9 +106,9 @@ To use this server with Claude Desktop:
   "mcpServers": {
     "mcp-server": {
       "command": "npx",
-      "args": ["-y","mcp-server"],
+      "args": ["@collaborne/mcp-server"],
       "env": {
-        "NEXT_API_KEY": "your-api-key"
+        "API_KEY": "your-api-key"
       }
     }
   }
