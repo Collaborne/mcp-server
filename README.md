@@ -104,9 +104,9 @@ To use this server with Claude Desktop:
 ```json
 {
   "mcpServers": {
-    "next-mcp-server": {
+    "mcp-server": {
       "command": "npx",
-      "args": ["next-mcp-server"],
+      "args": ["-y","mcp-server"],
       "env": {
         "NEXT_API_KEY": "your-api-key"
       }
@@ -124,9 +124,9 @@ To use this server with Claude Desktop:
 If you encounter errors with the above configuration in Claude Desktop, try using absolute paths as follows:
 
 ```bash
-# Get the path of node and next-mcp-server
+# Get the path of node and mcp-server
 which node
-which next-mcp-server
+which @collaborne/mcp-server
 ```
 
 ```json
@@ -135,7 +135,7 @@ which next-mcp-server
   "mcpServers": {
     "next": {
       "command": "your-absolute-path-to-node",
-      "args": ["your-absolute-path-to-next-mcp-server/dist/index.js"],
+      "args": ["your-absolute-path-to-mcp-server/dist/index.js"],
       "env": {
         "API_KEY": "your-api-key",
       }

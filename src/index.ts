@@ -9,7 +9,7 @@ import { createTools } from "./tools";
 // Process command-line arguments
 const args = process.argv.slice(2);
 if (args.includes("--help") || args.includes("-h")) {
-  console.log(`
+  process.stderr.write(`
 next-mcp-server - NEXT Model Context Protocol Server
 
 Usage:
