@@ -13,7 +13,7 @@ import {
 import { isExisting } from "../utils/is-existing.js";
 
 export class GetHighlightsTool implements IMCPTool {
-  readonly name = "get-highlights";
+  readonly name = "next-get-highlights";
 
   readonly description =
     "Used to fetch insight nuggets from User Interviews, Sales Calls, etc. Best used for specific details about a topic";

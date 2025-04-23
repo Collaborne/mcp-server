@@ -6,7 +6,7 @@ import { buildPlaylistsForPrompt } from "../utils/build-clusters-response.js";
 import z from "zod";
 
 export class GetClustersTool implements IMCPTool {
-  readonly name = "get-clusters";
+  readonly name = "next-get-clusters";
 
   readonly description =
     "Used to fetch insight nuggets from User Interviews, Sales Calls, etc. Best used for specific details about a topic";

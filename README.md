@@ -146,7 +146,7 @@ which @collaborne/mcp-server
 
 ## Available Tools
 
-### get-highlights
+### next-get-highlights
 
 Lists available NEXT highlights that the server has permission to access. This
 tool is limited to one team-space
@@ -174,7 +174,7 @@ What are the user frustrations and issues mentioned in the last week
 }
 ```
 
-### get-clusters 
+### next-get-clusters
 
 Lists available NEXT clusters that the server has permission to access. This
 tool is limited to one team-space
