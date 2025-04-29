@@ -12,11 +12,12 @@ export class GetClustersTool implements IMCPTool {
     "Used to fetch insight nuggets from User Interviews, Sales Calls, etc. Best used for specific details about a topic";
 
   readonly parameters = {
-    searchQuery: z
+    query: z
       .string()
-      .describe("Used to search for specific clusters")
-      .optional(),
-  } as const;
+      .describe(
+        "Used to search for specific clusters based on user question or empty string"
+      ),
+  };
 
   private apiClient: ApiClient;
 
@@ -24,10 +25,10 @@ export class GetClustersTool implements IMCPTool {
     this.apiClient = apiClient;
   }
 
-  async execute(args: { searchQuery: string }) {
+  async execute(args: { query?: string }) {
     try {
       const clusters = await this.apiClient.getClusters<MinimalPlaylist>({
-        search_term: args?.searchQuery ?? "",
+        search_term: args?.query ?? "",
       });
       const clustersStr = buildPlaylistsForPrompt(clusters);
       return {

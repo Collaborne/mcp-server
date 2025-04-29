@@ -43,6 +43,10 @@ export class ApiClient {
     return this.fetchApi<T>("search-playlists", params);
   }
 
+  async getTags<T = any>(): Promise<T[]> {
+    return this.fetchApi<T>("tags");
+  }
+
   /** Internal helper to DRY up common fetch logic */
   private async fetchApi<T>(
     endpoint: string,

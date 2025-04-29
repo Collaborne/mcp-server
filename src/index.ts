@@ -57,7 +57,7 @@ for (const tool of tools) {
   server.tool(
     tool.name,
     tool.description,
-    tool.parameters,
+    tool?.parameters ?? {},
     tool.execute.bind(tool)
   );
 }

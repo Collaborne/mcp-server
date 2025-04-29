@@ -1,7 +1,8 @@
-import { ApiClient } from "../resources/apiClient.js";
+import { ApiClient } from "../resources/apiClient";
 import type { IMCPTool } from "../types.js";
-import { GetClustersTool } from "./get-clusters.js";
-import { GetHighlightsTool } from "./get-highlights.js";
+import { GetClustersTool } from "./get-clusters";
+import { GetHighlightsTool } from "./get-highlights";
+import { GetTagsTool } from "./get-tags";
 
 /**
  * Create all tool instances
@@ -9,7 +10,11 @@ import { GetHighlightsTool } from "./get-highlights.js";
  * @returns Array of all tools
  */
 export function createTools(apiClient: ApiClient): IMCPTool[] {
-  return [new GetHighlightsTool(apiClient), new GetClustersTool(apiClient)];
+  return [
+    new GetTagsTool(apiClient),
+    new GetHighlightsTool(apiClient),
+    new GetClustersTool(apiClient),
+  ];
 }
 
 // Export all tool classes

@@ -4,42 +4,6 @@ export enum DateFilter {
   lastQuarter = "last quarter",
   forever = "forever",
 }
-export enum TypeFilter {
-  pain_point = "Pain Point",
-  enhancement_request = "Product Enhancement Request",
-  issue = "Product Issue",
-  compliment = "General Compliment",
-  positive_feedback = "Positive Product Feedback",
-  competitor_strength = "Competitor Strength",
-  competitor_weakness = "Competitor Weakness",
-}
-export enum ChartOption {
-  account_name = "account name",
-  account_industry = "account industry",
-  account_segment = "account segment",
-  account_region = "account region",
-  account_employee_size = "account employee size",
-  account_account_type = "account account type",
-  account_status = "account status",
-}
-
-export function getTypeKey(filterValue: TypeFilter): string | undefined {
-  const key = Object.keys(TypeFilter).find(
-    (key) => TypeFilter[key as keyof typeof TypeFilter] === filterValue
-  );
-
-  if (!key) {
-    return undefined;
-  }
-
-  return key.replace("_", "-");
-}
-
-export function getChartKey(filterValue: ChartOption): string | undefined {
-  return Object.keys(ChartOption).find(
-    (key) => ChartOption[key as keyof typeof ChartOption] === filterValue
-  );
-}
 
 export function toDateSearch(filter: DateFilter | undefined) {
   switch (filter) {
@@ -54,10 +18,8 @@ export function toDateSearch(filter: DateFilter | undefined) {
   }
 }
 
-export function toTypeSearch(types: TypeFilter[] = []) {
-  const filters = types.map((filter) => `${getTypeKey(filter)}`);
+export function toTagSearch(tagIds: string[]) {
+  const filterField = tagIds.length === 1 ? "tag" : "tag_or";
 
-  const filterField = filters.length === 1 ? "tag" : "tag_or";
-
-  return filters.map((filter) => `${filterField}:${filter}`).join(" ");
+  return tagIds.map((filter) => `${filterField}:${filter}`).join(" ");
 }

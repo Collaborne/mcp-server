@@ -26,7 +26,7 @@ export interface IMCPTool<
   /**
    * Parameter definitions
    */
-  readonly parameters: TParams;
+  readonly parameters?: TParams;
 
   /**
    * Execute the tool
@@ -57,3 +57,12 @@ export type MinimalPlaylist = {
   highlight_ids?: string[];
   labels?: string[];
 };
+
+export interface MinimalTag {
+  id: string;
+  tenant: string;
+  project_id: string;
+  name?: string;
+  search_terms?: string[];
+  group?: string;
+}
